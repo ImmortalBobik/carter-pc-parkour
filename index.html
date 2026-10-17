@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carter PC Parkour</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="src/style.css" />
+    <script type="importmap">
+      { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js" } }
+    </script>
+  </head>
+  <body>
+    <canvas id="game"></canvas>
+
+    <div id="hud" class="hidden">
+      <div class="hud-item"><span class="label">TIME</span><span id="time">0.00</span></div>
+      <div class="hud-item"><span class="label">CHECKPOINT</span><span id="cp">0 / 0</span></div>
+      <div class="hud-item"><span class="label">FALLS</span><span id="falls">0</span></div>
+    </div>
+
+    <div id="toast"></div>
+    <div id="crosshair"></div>
+    <div id="lock-hint" class="hidden">Click to lock mouse</div>
+
+    <div id="menu" class="overlay">
+      <div class="card">
+        <div id="face-preview"></div>
+        <h1>CARTER PC<br /><span>PARKOUR</span></h1>
+        <p class="sub">Jump across the floating blocks. Reach the gold tower.</p>
+        <button id="play">PLAY</button>
+        <label class="upload">
+          <input type="file" id="face-input" accept="image/*" />
+          Change face image
+        </label>
+        <div class="controls">
+          <div><kbd>W A S D</kbd> move</div>
+          <div><kbd>Mouse</kbd> look</div>
+          <div><kbd>Space</kbd> jump</div>
+          <div><kbd>Shift</kbd> sprint</div>
+          <div><kbd>R</kbd> back to checkpoint</div>
+          <div><kbd>Esc</kbd> pause</div>
+          <div><kbd>F5</kbd> / <kbd>V</kbd> change view</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="win" class="overlay hidden">
+      <div class="card">
+        <h1>YOU MADE IT</h1>
+        <p class="big" id="win-time">0.00s</p>
+        <p class="sub" id="win-stats"></p>
+        <p class="sub" id="win-best"></p>
+        <button id="again">PLAY AGAIN</button>
+      </div>
+    </div>
+
+    <script type="module" src="src/main.js"></script>
+  </body>
+</html>

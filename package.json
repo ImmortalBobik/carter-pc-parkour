@@ -1,0 +1,9 @@
+{
+  "name": "carter-pc-parkour",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node server.js 5173"
+  }
+}
